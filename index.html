@@ -26,6 +26,18 @@
   .notice { margin-bottom:8px; color:#444; font-size:13px; }
   .searchBox { margin-left:auto; display:flex; gap:8px; align-items:center; }
   input[type="text"] { padding:6px; border:1px solid #ddd; }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  #viewer {
+    flex: 1;
+    min-height: 0; /* prevents flex overflow */
+  }
 </style>
 </head>
 <body>
@@ -67,7 +79,6 @@
 
   <div style="margin-top: 12px; display:flex; gap:12px; align-items:center;">
     <div id="stats" style="font-size:13px;color:#333;">Rendered: 0 | Total: 0</div>
-    <div style="font-size:13px;color:#666;">(Use browser find to locate error strings)</div>
   </div>
 
   <div id="viewer" class="viewer" tabindex="0" aria-label="Mapping viewer" style="margin-top:8px;">
