@@ -40,6 +40,9 @@
     min-height: 0; /* prevents flex overflow */
     margin: 0 0 8px;
   }
+  .row.error {
+    background: #ffecec; /* soft red */
+  }
 </style>
 </head>
 <body>
@@ -219,7 +222,7 @@
     else if (isScene7Url(value)) {
         status.style.display = 'block';
         status.textContent = 'Error: Scene7';
-
+        row.classList.add('error')
         thumb.textContent = 'Scene7';
         thumb.style.fontSize = '12px';
         thumb.style.color = '#b33';
@@ -243,6 +246,8 @@
 
             status.style.display = 'block';
             status.textContent = 'Error: Not Found';
+            row.classList.add('error');
+
             img.alt = 'Error: Not Found';
         };
 
